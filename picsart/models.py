@@ -6,9 +6,29 @@ import datetime as dt
 class Location(models.Model):
     image_location = models.CharField(max_length = 30)
 
+    def __str__(self):
+        return self.image_location
+
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+
 
 class Category(models.Model):
     image_category = models.CharField(max_length = 30)
+        
+    def __str__(self):
+        return self.image_category
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
 
 
 class Image(models.Model):
@@ -19,6 +39,14 @@ class Image(models.Model):
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
 
+    def __str__(self):
+        return self.name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
 
 
     
