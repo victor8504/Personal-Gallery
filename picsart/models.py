@@ -68,6 +68,11 @@ class Image(models.Model):
         return updated
 
     @classmethod
+    def get_images(cls):
+        images = cls.objects.order_by('pub_date')
+        return images
+    
+    @classmethod
     def get_image(cls, id):
         image = cls.objects.get(id = id)
         return image
