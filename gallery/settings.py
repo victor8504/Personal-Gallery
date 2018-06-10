@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'picsart.apps.PicsartConfig',
+    'picsart',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
