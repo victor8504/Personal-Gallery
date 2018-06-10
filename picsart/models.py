@@ -82,6 +82,16 @@ class Image(models.Model):
         category = cls.objects.filter(image_category__icontains = search_term)
         return category
 
+    @classmethod
+    def majuu(cls):
+        images = cls.objects.filter(location__location__startswith = 'Majuu').order_by('pub_date')
+        return images
+
+    @classmethod
+    def nairobi(cls):
+        images = cls.objects.filter(location__location__startswith = 'Nairobi').order_by('pub_date')
+        return images
+
 
     
     
