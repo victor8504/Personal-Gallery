@@ -4,10 +4,6 @@ import datetime as dt
 # Create your models here.
 
 class Location(models.Model):
-    NAIROBI = 'NAIROBI'
-    MOMBASA = 'MOMBASA'
-    JUJA = 'JUJA'
-
     location = models.CharField(max_length = 30)
 
     def save_location(self):
@@ -46,7 +42,7 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    name = models.CharField(max_length = 30)
+    name = models.CharField(max_length = 30, blank = True)
     image = models.ImageField(upload_to = 'pics/', default = 'image')
     description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add = True)
