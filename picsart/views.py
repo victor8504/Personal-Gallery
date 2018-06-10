@@ -13,11 +13,19 @@ def image(request, image_id):
 def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
-        query = request.GET.get("image")
-        results = Image.searched(query)
+        search_term = request.GET.get("image")
+        results = Image.search_by_category(search_term)
         message = f"{query}"
 
         return render(request, 'results.html',{"message": message, "results": results})
     else:
         message = "What images are you interested in?"
         return render(request, 'results.html',{"message": message})
+
+def get_nairobi(request):
+    location_images = Image.nairobi()
+    return render(request, 'locations.html', {"images": location_images})
+
+def get_majuu(request):
+    location_images = Image.majuu()
+    return render(request, 'locations.html', {"images": location_images})
