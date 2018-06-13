@@ -5,10 +5,10 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name = 'index'),
-    url('search', views.search_results, name = 'search_results'),
-    url('image/<int:image_id>', views.image, name = 'single_image'),
-    url('nairobi', views.get_nairobi, name = 'nairobi'),
-    url('majuu', views.get_majuu, name = 'majuu'),
+    url(r'^search/$', views.search_results, name = 'search_results'),
+    url(r'^image/(?P<image_id>\d+)/$', views.image, name = 'single_image'),
+    url(r'^nairobi/$', views.get_nairobi, name = 'nairobi'),
+    url(r'^majuu/$', views.get_majuu, name = 'majuu'),
 ]
 
 if settings.DEBUG:

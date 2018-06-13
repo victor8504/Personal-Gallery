@@ -18,10 +18,10 @@
                     <div class="zoom">
                         <div class="overlay">
                             <div class="flex red">
-                                <a href="{% url 'single_image' image_id = result.id %}" class="btn-primary">View Image</a>
+                                <a href="{% url 'single_image' image_id=result.id %}" class="btn-primary">View Image</a>
                             </div>
                         </div>
-                    <img src="{{result.image_url}}" alt="image" class="img-fluid">
+                    <img src="{{result.image.url}}" alt="image" class="img-fluid">
                     </div>
                     {% if photo.location.location == "nairobi" %}
                         <p><a href="{% url 'nairobi' %}">{{result.location}}</a></p>
